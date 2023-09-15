@@ -1,5 +1,6 @@
 package Utils;
 
+import Page.SignUp;
 import org.apache.bcel.Constants;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
@@ -85,4 +86,5 @@ public class CommonMethods {
         return picBytes;
 
     }
+
 }

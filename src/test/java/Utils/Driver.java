@@ -26,9 +26,10 @@ public class Driver {
                 switch (ConfigReader.getProperties("browser")) {
                     case "chrome":
                         WebDriverManager.chromedriver().setup();
+                        ChromeOptions ops = new ChromeOptions();
+                        ops.addArguments("--remote-allow-origins=*");
 
-
-                        driverPool.set(new ChromeDriver());
+                        driverPool.set(new ChromeDriver(ops));
                         break;
                     case "firefox":
                         WebDriverManager.firefoxdriver().setup();
@@ -53,13 +54,13 @@ public class Driver {
 
     }
 
-    public static void closeDriver() {
+  /*  public static void closeDriver() {
         if (driverPool.get() != null) {
             driverPool.get().quit();
             driverPool.remove();
         }
 
-    }
+    }*/
 
 
 

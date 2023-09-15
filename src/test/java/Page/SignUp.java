@@ -3,25 +3,32 @@ package Page;
 import Utils.CommonMethods;
 import Utils.ConfigReader;
 import Utils.Driver;
+import com.github.javafaker.Faker;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.concurrent.TimeUnit;
+
 
 public class SignUp extends CommonMethods {
-
+    public String userEmail =ConfigReader.getProperties("user_email");
+    public String savedUserPassword=ConfigReader.getProperties("user_password");
+    public Faker faker = new Faker();
 public SignUp (){
     PageFactory.initElements(Driver.getDriver(),this);
+
 }
 
 
-    @FindBy(linkText = "Sign In")
-    private WebElement HomePageSignIn;
+
+    @FindBy(xpath = "//ul[@class='header links'] //li[2]//a")
+    private WebElement SignInButton;
 
     @FindBy(id = "email")
-    private WebElement userEmail;
+    private WebElement UserName;
 
     @FindBy(id = "pass")
     private WebElement userPassword;
@@ -40,38 +47,28 @@ public SignUp (){
     @FindBy(id = "pass-error")
     private WebElement nullPasswordMessage;
 
+public void homePageLandOn(){
+    Driver.getDriver().get(ConfigReader.getProperties("url"));
 
-
-
-/*
-Scenario:  SignUp Page Successful Login
-    Given the end-user lands on homepage
-    When  the end-user clicks on sign in button
-    Then  the end-user enters correct credentials
-    And   the end-user gets welcome message
- */
-
+}
     public void SignInButton() {
-
-        Driver.getDriver().findElement((By) HomePageSignIn).click();
-
+    Driver.getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+    SignInButton.click();
     }
-    public void homePageLandOn(){
-        Driver.getDriver().get(ConfigReader.getProperties("url"));
 
-    }
 
     public void loginToSystem(String userName, String password) {
 
-        Driver.getDriver().findElement((By) userEmail).sendKeys(userName);
-        Driver.getDriver().findElement((By) userPassword).sendKeys(password);
-        Driver.getDriver().findElement((By)signUpButton).click();
+      UserName.sendKeys(userName);
+         userPassword.sendKeys(password);
+        clickWithWait( signUpButton);
 
     }
 
     public void welcomeMessage() {
+    setWaitTime();
         Assert.assertEquals(Driver.getDriver().findElement((By) welcomeMessage).
-                getText(), "Welcome, " + ConfigReader.getProperties("user_nameAndLastName") + "!");
+                getText(),  ConfigReader.getProperties("Message") );
 
     }
 
