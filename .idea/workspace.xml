@@ -4,13 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d2267e86-3c8d-4789-94b8-0fa9231733fb" name="Changes" comment="bunlar benden">
+    <list default="true" id="d2267e86-3c8d-4789-94b8-0fa9231733fb" name="Changes" comment="...">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Configuration.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/Configuration.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Page/SignUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Page/SignUp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Runner/FailedRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Runner/FailedRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Steps/Hooks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Steps/Hooks.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Steps/SignInPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Steps/SignInPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Utils/CommonMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Utils/CommonMethods.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Utils/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Utils/Driver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/resources/FeatureFiles/SignUp.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/FeatureFiles/SignUp.feature" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -171,7 +174,14 @@
       <option name="project" value="LOCAL" />
       <updated>1694741621934</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="...">
+      <created>1694745682953</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1694745682953</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -187,6 +197,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="bunlar benden" />
-    <option name="LAST_COMMIT_MESSAGE" value="bunlar benden" />
+    <MESSAGE value="..." />
+    <option name="LAST_COMMIT_MESSAGE" value="..." />
   </component>
 </project>
