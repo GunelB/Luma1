@@ -5,13 +5,9 @@ import Utils.ConfigReader;
 import Utils.Driver;
 import com.github.javafaker.Faker;
 import org.junit.Assert;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
-import java.util.concurrent.TimeUnit;
-
 
 public class SignUp extends CommonMethods {
     public String userEmail =ConfigReader.getProperties("user_email");
@@ -39,7 +35,7 @@ public SignUp (){
     @FindBy(xpath = "(//span[@class='logged-in']) [1]")
     private WebElement welcomeMessage;
 
-    @FindBy(xpath = "(//div[@class='messages'])[1]")
+    @FindBy(xpath = "(//div[@class='message-error error message']// div")
     private WebElement errorMessage;
     @FindBy(id = "email-error")
     private WebElement nullEmailMessage;
@@ -52,7 +48,7 @@ public void homePageLandOn(){
 
 }
     public void SignInButton() {
-    Driver.getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        setWaitTime();
     SignInButton.click();
     }
 
@@ -67,25 +63,23 @@ public void homePageLandOn(){
 
     public void welcomeMessage() {
     setWaitTime();
-        Assert.assertEquals(Driver.getDriver().findElement((By) welcomeMessage).
-                getText(),  ConfigReader.getProperties("Message") );
+        Assert.assertTrue(welcomeMessage.getText().contains(ConfigReader.getProperties("Message")));
 
     }
 
     public void nullEmailMessage() {
-        Assert.assertEquals(Driver.getDriver().findElement((By) nullEmailMessage)
-                .getText(), ConfigReader.getProperties("null_credential_message"));
+        Assert.assertEquals(nullEmailMessage.getText(), ConfigReader.getProperties("null_credential_message"));
 
     }
 
     public void nullPasswordMessage() {
-        Assert.assertEquals(Driver.getDriver().findElement((By) nullPasswordMessage)
-                .getText(), ConfigReader.getProperties("null_credential_message"));
+        Assert.assertEquals( nullPasswordMessage.getText(), ConfigReader.getProperties("null_credential_message"));
 
     }
 
     public void ErrorMessage() {
-        Assert.assertEquals(Driver.getDriver().findElement((By) errorMessage)
-                .getText(), ConfigReader.getProperties("error_message"));
+    setWaitTime();
+    setWaitTime();
+        Assert.assertEquals(errorMessage.getText(), ConfigReader.getProperties("error_message"));
     }
 }

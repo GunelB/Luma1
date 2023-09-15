@@ -2,8 +2,6 @@ package Steps;
 
 import Page.SignUp;
 import Utils.CommonMethods;
-import Utils.ConfigReader;
-import Utils.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -21,8 +19,6 @@ public class SignInPage extends CommonMethods {
     @When("the end-user clicks on sign in button")
     public void the_end_user_clicks_on_sign_in_button() {
         signUp.SignInButton();
-
-
     }
 
     @Then("the end-user enters correct credentials")
@@ -34,6 +30,7 @@ public class SignInPage extends CommonMethods {
     @Then("the end-user gets welcome message")
     public void the_end_user_gets_welcome_message() {
         signUp.welcomeMessage();
+
     }
 
     @Then("the end-user enters invalid password,valid username")
@@ -44,6 +41,7 @@ public class SignInPage extends CommonMethods {
     @Then("the end-user gets error message")
     public void the_end_user_gets_error_message() {
         signUp.ErrorMessage();
+
     }
 
     @Then("the end-user enters valid password,invalid username")
@@ -53,31 +51,36 @@ public class SignInPage extends CommonMethods {
 
     @Then("the end-user enters null password, null username")
     public void the_end_user_enters_null_password_null_username() {
-        signUp.loginToSystem("","");
+        signUp.loginToSystem("", "");
     }
 
     @Then("the end-user gets required fields message")
     public void the_end_user_gets_required_fields_message() {
         signUp.nullEmailMessage();
         signUp.nullPasswordMessage();
+
     }
 
 
     @Then("the end-user enters null password, valid username")
     public void the_end_user_enters_null_password_valid_username() {
-        signUp.loginToSystem(signUp.userEmail,"");
+        signUp.loginToSystem(signUp.userEmail, "");
     }
+
     @Then("the end-user gets required password field message")
     public void the_end_user_gets_required_password_field_message() {
         signUp.nullPasswordMessage();
+
     }
 
     @Then("the end-user enters valid password, null username")
     public void the_end_user_enters_valid_password_null_username() {
     }
+
     @Then("the end-user gets required username field message")
     public void the_end_user_gets_required_username_password_field_message() {
         signUp.nullEmailMessage();
+
     }
 }
 

@@ -1,13 +1,9 @@
 package Utils;
-
-import Page.SignUp;
-import org.apache.bcel.Constants;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.Wait;
-
 import java.io.File;
 import java.time.Duration;
 import java.util.NoSuchElementException;
