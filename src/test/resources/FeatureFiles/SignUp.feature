@@ -6,7 +6,7 @@ Feature: Sign in Page
     When  the end-user clicks on sign in button
     Then  the end-user enters correct credentials
     And   the end-user gets welcome message
-    ##And   the end-user gets welcome message-- burda bug var galiba
+
 
 
 

@@ -1,10 +1,6 @@
 package Utils;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.apache.bcel.Constants;
-import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -54,13 +50,13 @@ public class Driver {
 
     }
 
-  /*  public static void closeDriver() {
+  public static void closeDriver() {
         if (driverPool.get() != null) {
             driverPool.get().quit();
             driverPool.remove();
         }
 
-    }*/
+    }
 
 
 
