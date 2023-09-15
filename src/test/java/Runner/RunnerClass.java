@@ -6,9 +6,9 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "src/test/resources/FeatureFiles/SignUp.feature",
-        glue = "src/test/java/Steps",
-      // tags = "Test1",
+        features = "src/test/resources/FeatureFiles",
+        glue = "Steps",
+      //tags = "Test1",
         dryRun = false,
         plugin = {
                 "pretty",
